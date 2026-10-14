@@ -1,0 +1,277 @@
+
+.search-icon {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    text-align: center;
+    mask: url('../images/icons/search.svg') no-repeat center;
+    -webkit-mask: url('../images/icons/search.svg') no-repeat center;
+}
+.image-icon {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    text-align: center;
+    mask: url('../images/icons/image.svg') no-repeat center;
+    -webkit-mask: url('../images/icons/image.svg') no-repeat center;
+}
+.menu-dot-icon {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    text-align: center;
+    mask: url('../images/icons/menu-dot.svg') no-repeat center;
+    -webkit-mask: url('../images/icons/menu-dot.svg') no-repeat center;
+}
+
+.menu-grid-icon {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    text-align: center;
+    mask: url('../images/icons/menu-grid.svg') no-repeat center;
+    -webkit-mask: url('../images/icons/menu-grid.svg') no-repeat center;
+}
+
+.menu-bar-icon {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    text-align: center;
+    mask: url('../images/icons/menu-bar.svg') no-repeat center;
+    -webkit-mask: url('../images/icons/menu-bar.svg') no-repeat center;
+}
+
+.home-icon {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    text-align: center;
+    mask: url('../images/icons/house-fill.svg') no-repeat center;
+    -webkit-mask: url('../images/icons/house-fill.svg') no-repeat center;
+}
+
+.user-icon {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    text-align: center;
+    mask: url('../images/icons/person-fill.svg') no-repeat center;
+    -webkit-mask: url('../images/icons/person-fill.svg') no-repeat center;
+}
+
+.envelope-icon {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    mask: url('../images/icons/envelope-at-fill.svg') no-repeat center;
+    -webkit-mask: url('../images/icons/envelope-at-fill.svg') no-repeat center;
+}
+
+.okey-icon {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    mask: url('../images/icons/okey.svg') no-repeat center;
+    -webkit-mask: url('../images/icons/okey.svg') no-repeat center;
+}
+.error-icon {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    mask: url('../images/icons/error.svg') no-repeat center;
+    -webkit-mask: url('../images/icons/error.svg') no-repeat center;
+}
+
+
+.notification-icon {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    text-align: center;
+    mask: url('../images/icons/bell-fill.svg') no-repeat center;
+    -webkit-mask: url('../images/icons/bell-fill.svg') no-repeat center;
+}
+
+.caret-down-icon {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    mask: url('../images/icons/caret-down.svg') no-repeat center;
+    -webkit-mask: url('../images/icons/caret-down.svg') no-repeat center;
+}
+
+.angle-down-icon {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    mask: url('../images/icons/angle-down.svg') no-repeat center;
+    -webkit-mask: url('../images/icons/angle-down.svg') no-repeat center;
+}
+
+.angle-up-icon {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    mask: url('../images/icons/angle-up.svg') no-repeat center;
+    -webkit-mask: url('../images/icons/angle-up.svg') no-repeat center;
+}
+
+.angle-left-icon {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    mask: url('../images/icons/angle-left.svg') no-repeat center;
+    -webkit-mask: url('../images/icons/angle-left.svg') no-repeat center;
+}
+
+.angle-right-icon {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    mask: url('../images/icons/angle-right.svg') no-repeat center;
+    -webkit-mask: url('../images/icons/angle-right.svg') no-repeat center;
+}
+
+.arrow-right-icon {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    mask: url('../images/icons/arrow-right.svg') no-repeat center;
+    -webkit-mask: url('../images/icons/arrow-right.svg') no-repeat center;
+}
+
+.arrow-up-right-icon {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    mask: url('../images/icons/arrow-up-right-circle.svg') no-repeat center;
+    -webkit-mask: url('../images/icons/arrow-up-right-circle.svg') no-repeat center;
+}
+
+.arrow-down-right-icon {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    mask: url('../images/icons/arrow-down-right-circle.svg') no-repeat center;
+    -webkit-mask: url('../images/icons/arrow-down-right-circle.svg') no-repeat center;
+}
+.sort-icon {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    mask: url('../images/icons/sort.svg') no-repeat center;
+    -webkit-mask: url('../images/icons/sort.svg') no-repeat center;
+}
+
+.linkedin-icon {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    mask: url('../images/icons/linkedin.svg') no-repeat center;
+    -webkit-mask: url('../images/icons/linkedin.svg') no-repeat center;
+}
+
+.instagram-icon {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    mask: url('../images/icons/instagram.svg') no-repeat center;
+    -webkit-mask: url('../images/icons/instagram.svg') no-repeat center;
+}
+
+.facebook-icon {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    mask: url('../images/icons/facebook.svg') no-repeat center;
+    -webkit-mask: url('../images/icons/facebook.svg') no-repeat center;
+}
+
+.youtube-icon {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    mask: url('../images/icons/youtube.svg') no-repeat center;
+    -webkit-mask: url('../images/icons/youtube.svg') no-repeat center;
+}
+
+.twitter-icon {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    mask: url('../images/icons/twitter-x.svg') no-repeat center;
+    -webkit-mask: url('../images/icons/twitter-x.svg') no-repeat center;
+}
+
+.sitemap-icon {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    mask: url('../images/icons/sitemap.svg') no-repeat center;
+    -webkit-mask: url('../images/icons/sitemap.svg') no-repeat center;
+}
+
+.braille-icon {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    mask: url('../images/icons/braille.svg') no-repeat center;
+    -webkit-mask: url('../images/icons/braille.svg') no-repeat center;
+}
+
+.code-icon {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    mask: url('../images/icons/code.svg') no-repeat center;
+    -webkit-mask: url('../images/icons/code.svg') no-repeat center;
+}
+
+.dna-icon {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    mask: url('../images/icons/dna.svg') no-repeat center;
+    -webkit-mask: url('../images/icons/dna.svg') no-repeat center;
+}
+
+.dumbbell-icon {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    mask: url('../images/icons/dumbbell.svg') no-repeat center;
+    -webkit-mask: url('../images/icons/dumbbell.svg') no-repeat center;
+}
+
+.warehouse-icon {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    mask: url('../images/icons/warehouse.svg') no-repeat center;
+    -webkit-mask: url('../images/icons/warehouse.svg') no-repeat center;
+}
+
+.screwdriver-wrench-icon {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    mask: url('../images/icons/screwdriver-wrench.svg') no-repeat center;
+    -webkit-mask: url('../images/icons/screwdriver-wrench.svg') no-repeat center;
+}
+
+.people-arrows-icon {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    mask: url('../images/icons/people-arrows.svg') no-repeat center;
+    -webkit-mask: url('../images/icons/people-arrows.svg') no-repeat center;
+}
+
+.notes-medical-icon {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    mask: url('../images/icons/notes-medical.svg') no-repeat center;
+    -webkit-mask: url('../images/icons/notes-medical.svg') no-repeat center;
+}
