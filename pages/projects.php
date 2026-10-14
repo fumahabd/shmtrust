@@ -35,20 +35,15 @@
 
     <body>
         <?php pageAdd('components/header'); ?>
-        <section class="my-5">
-            <div class="row pt-5 g-0 d-flex align-items-center justify-content-center">
-                <div class="col-12 text-center">
-                    <h1 class="fw-bolder text-secondary">
-                        Our Projects
-                    </h1>
-                    <span class="divider-3x"> </span>
-                    <h4 class="py-3 text-capitalize">Judge by our work</h4>
-                </div>
+        <?php pageAdd('components/hero', [
+            'headerEyebrow' => 'Creating a Healthier Tomorrow',
+            'headerTitle' => 'Our Projects',
+            'headerDescription' => 'Every initiative brings hope closer to home.',
+        ]); ?>
+        <section class="mb-5">
+            <div class="row g-0 d-flex align-items-center justify-content-center">
                 <?php if(!empty($ongoingProjects)){?>
                 <div class="col-md-10 col-12">
-                    <div class="background-tube">
-                        <h3 class="text-center fw-bold ls-2">Ongoing Projects</h3>
-                    </div>
                     <div class="shadow-lg py-2 mt-3">
                         <div class="row d-flex g-4 align-items-stretch justify-content-center p-md-3 p-2">
                             <?php foreach ($ongoingProjects as $ongoing) { ?>
@@ -69,21 +64,22 @@
                     </div>
                 </div>
                 <?php } if(!empty($completedProjects)){?>
-                <div class="col-md-10 col-12 pt-lg-5 pt-3">
-                    <div class="background-tube">
-                        <h3 class="text-center fw-bold ls-2">Other Projects</h3>
+                <div class="col-md-10 col-12 pt-lg-5 pt-3 other-projects-section">
+                    <div class="other-projects-heading">
+                        <span class="other-projects-kicker">Completed initiatives</span>
+                        <h2>Other Projects</h2>
                     </div>
-                    <div class="shadow-lg py-2 mt-3">
+                    <div class="other-projects-list shadow-lg py-2 mt-3">
                         <div class="row d-flex g-4 align-items-stretch justify-content-center p-md-3 p-2">
                             <?php foreach ($completedProjects as $completed) { ?>
                             <div class="col-sm-6 col-12 d-flex flex-column">
-                                <div class="bg-white shadow flex-grow-1 p-md-3 p-1 rounded-4 shadow-lg-hover border">
-                                    <div class="pb-2">
+                                <div class="other-project-card flex-grow-1 p-md-3 p-2 rounded-4">
+                                    <div class="other-project-image pb-2">
                                         <img data-src="./<?php echo $completed['image'] ?>"
                                             alt="<?php echo $completed['title'] ?>" class="w-100">
                                     </div>
 
-                                    <h5 class="fw-bold text-secondary"><?php echo $completed['title'] ?></h5>
+                                    <h3 class="other-project-title"><?php echo $completed['title'] ?></h3>
 
                                     <p><?php echo $completed['text'] ?></p>
                                 </div>

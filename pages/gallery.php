@@ -4,14 +4,18 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>SHM Trust - Our Gallery</title>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="./css/bootstrap.css" />
+  <link rel="stylesheet" href="./css/style.css" />
+  <link rel="stylesheet" href="./css/loader.css" />
+  <link rel="stylesheet" href="./css/icons.css" />
+  <script src="./js/utilities.js"></script>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --teal-deep:  #0D5C63;
-      --teal-mid:   #1A8A7B;
-      --teal-light: #C8EDE8;
+      --teal-deep:  #103F7A;
+      --teal-mid:   #1756A2;
+      --teal-light: #EAF2FC;
       --cream:      #F7F4EF;
       --charcoal:   #1C1C1C;
       --muted:      #6B7A7D;
@@ -22,98 +26,11 @@
       font-family: 'DM Sans', sans-serif;
       background: var(--cream);
       color: var(--charcoal);
-      min-height: 100vh;
-    }
-
-    /* ── HEADER ── */
-    header {
-      background: var(--teal-deep);
-      padding: 20px 48px 20px;
-      position: relative;
-      overflow: hidden;
-      text-align: center;
-    }
-    header::before {
-      content: '';
-      position: absolute;
-      left: -80px; top: -80px;
-      width: 300px; height: 300px;
-      border-radius: 50%;
-      background: var(--teal-mid);
-      opacity: 0.22;
-    }
-    header::after {
-      content: '';
-      position: absolute;
-      right: 40px; bottom: -90px;
-      width: 240px; height: 240px;
-      border-radius: 50%;
-      background: var(--teal-light);
-      opacity: 0.10;
-    }
-    .header-inner { position: relative; z-index: 1; }
-
-    /* Home button */
-    .home-btn {
-      position: absolute;
-      top: 0; left: 0;
-      display: inline-flex;
-      align-items: center;
-      gap: 7px;
-      background: rgba(255,255,255,0.10);
-      border: 1.5px solid rgba(255,255,255,0.25);
-      color: var(--white);
-      font-family: 'DM Sans', sans-serif;
-      font-size: 13px;
-      font-weight: 500;
-      padding: 8px 18px 8px 14px;
-      border-radius: 100px;
-      text-decoration: none;
-      transition: background 0.18s, border-color 0.18s;
-      white-space: nowrap;
-    }
-    .home-btn:hover {
-      background: rgba(255,255,255,0.22);
-      border-color: rgba(255,255,255,0.5);
-    }
-    .home-btn svg {
-      stroke: var(--white);
-      flex-shrink: 0;
-    }
-    .header-eyebrow {
-      font-size: 11px;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      color: var(--teal-light);
-      font-weight: 500;
-      margin-bottom: 12px;
-    }
-    header h2 {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(1.5rem, 4vw, 2.5rem);
-      font-weight: 600;
-      color: var(--white);
-      line-height: 1.1;
-    }
-    header p {
-      margin-top: 14px;
-      color: rgba(255,255,255,0.62);
-      font-size: 15px;
-      font-weight: 300;
-      line-height: 1.6;
-    }
-    .divider {
-      width: 48px; height: 2px;
-      background: var(--teal-light);
-      margin: 18px auto 0;
-      border-radius: 2px;
-      opacity: 0.6;
     }
 
     /* ── GALLERY FLEX GRID ── */
     .gallery-section {
       padding: 48px 40px 80px;
-      max-width: 1400px;
       margin: 0 auto;
     }
 
@@ -139,7 +56,7 @@
     }
     .photo-item:hover {
       transform: translateY(-4px);
-      box-shadow: 0 14px 36px rgba(13,92,99,0.18);
+      box-shadow: 0 14px 36px rgba(23,86,162,0.18);
       z-index: 2;
     }
     .photo-item img {
@@ -155,7 +72,7 @@
     .photo-num {
       position: absolute;
       top: 10px; left: 10px;
-      background: rgba(13,92,99,0.75);
+      background: rgba(16,63,122,0.82);
       color: white;
       font-size: 11px;
       font-weight: 600;
@@ -183,7 +100,7 @@
 
     /* Placeholder styling (before you add real images) */
     .photo-item.placeholder {
-      background: linear-gradient(135deg, #C8EDE8 0%, #a8d8d2 100%);
+      background: linear-gradient(135deg, #EAF2FC 0%, #D3E3F7 100%);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -206,7 +123,6 @@
     @media (max-width: 800px) {
       .photo-item { flex: 1 1 calc(33.33% - 14px); max-width: calc(33.33% - 14px); } /* 3 per row */
       .gallery-section { padding: 32px 20px 60px; }
-      header { padding: 40px 24px 36px; }
     }
     @media (max-width: 520px) {
       .photo-item { flex: 1 1 calc(50% - 14px); max-width: calc(50% - 14px); } /* 2 per row */
@@ -311,204 +227,174 @@
 </head>
 <body>
 
-<!-- HEADER -->
-<header>
-  <div class="header-inner">
-
-    <!-- Home Button — change href="index.html" to your actual home page -->
-    <a href="/" class="home-btn">
-      <!-- <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <path d="M3 9.5L12 3l9 6.5V20a1 1 0 01-1 1H5a1 1 0 01-1-1V9.5z"/>
-        <path d="M9 21V12h6v9"/>
-      </svg> -->
-      Home
-    </a>
-
-    <p class="header-eyebrow">Sahera Hasan Memorial Trust</p>
-    <h2>Our Gallery</h2>
-    <p>Moments of care, compassion &amp; community — captured and remembered.</p>
-    <!-- GALLERY <div class="divider"></div>   -->
-  </div>
-</header>
-
+<?php pageAdd('components/header'); ?>
+<?php pageAdd('components/hero', [
+  'headerEyebrow' => 'Moments of Care & Compassion',
+  'headerTitle' => 'Our Gallery',
+  'headerDescription' => 'Stories of kindness, captured in every moment.',
+]); ?>
 <!-- GALLERY -->
-<section class="gallery-section">
-  <div class="flex-grid" id="flexGrid">
-
-    <!--
-    ═══════════════════════════════════════════════════════════════
-    HOW TO ADD YOUR PHOTOS:
-    Replace   src="images/gallery/your-photo.jpg"
-    with the actual path to your image file.
-
-    Caption is optional — remove the <p> tag if not needed.
-
-    Example with real image:
-    <div class="photo-item" onclick="openLightbox(0)">
-      <img src="images/gallery/photo1.jpg" alt="Caption here" loading="lazy"/>
-      <span class="photo-num">01</span>
-      <div class="caption-overlay"><p>Your caption here</p></div>
-    </div>
-    ═══════════════════════════════════════════════════════════════
-    -->
-
-    <!-- PHOTO 01 -->
-    <div class="photo-item" onclick="openLightbox(0)">
-      <img src="images/gallery/photo01.jpg" alt="Photo 01" loading="lazy"/>
-      <span class="photo-num">01</span>
-      <div class="caption-overlay"><p>Your caption here</p></div>
-    </div>
-
-    <!-- PHOTO 02 -->
-    <div class="photo-item" onclick="openLightbox(1)">
-      <img src="images/gallery/photo02.png" alt="Photo 02" loading="lazy"/>
-      <span class="photo-num">02</span>
-      <div class="caption-overlay"><p>Your caption here</p></div>
-    </div>
-
-    <!-- PHOTO 03 -->
-    <div class="photo-item" onclick="openLightbox(2)">
-      <img src="images/gallery/photo03.jpg" alt="Photo 03" loading="lazy"/>
-      <span class="photo-num">03</span>
-      <div class="caption-overlay"><p>Your caption here</p></div>
-    </div>
-
-    <!-- PHOTO 04 -->
-    <div class="photo-item" onclick="openLightbox(3)">
-      <img src="images/gallery/photo04.jpg" alt="Photo 04" loading="lazy"/>
-      <span class="photo-num">04</span>
-      <div class="caption-overlay"><p>Your caption here</p></div>
-    </div>
-
-    <!-- PHOTO 05 -->
-    <div class="photo-item" onclick="openLightbox(4)">
-      <img src="images/gallery/photo05.jpg" alt="Photo 05" loading="lazy"/>
-      <span class="photo-num">05</span>
-      <div class="caption-overlay"><p>Your caption here</p></div>
-    </div>
-
-    <!-- PHOTO 06 -->
-    <div class="photo-item" onclick="openLightbox(5)">
-      <img src="images/gallery/photo06.jpg" alt="Photo 06" loading="lazy"/>
-      <span class="photo-num">06</span>
-      <div class="caption-overlay"><p>Your caption here</p></div>
-    </div>
-
-    <!-- PHOTO 07 -->
-    <div class="photo-item" onclick="openLightbox(6)">
-      <img src="images/gallery/photo07.jpg" alt="Photo 07" loading="lazy"/>
-      <span class="photo-num">07</span>
-      <div class="caption-overlay"><p>Your caption here</p></div>
-    </div>
-
-    <!-- PHOTO 08 -->
-    <div class="photo-item" onclick="openLightbox(7)">
-      <img src="images/gallery/photo08.jpg" alt="Photo 08" loading="lazy"/>
-      <span class="photo-num">08</span>
-      <div class="caption-overlay"><p>Your caption here</p></div>
-    </div>
-
-    <!-- PHOTO 09 -->
-    <div class="photo-item" onclick="openLightbox(8)">
-      <img src="images/gallery/photo09.jpg" alt="Photo 09" loading="lazy"/>
-      <span class="photo-num">09</span>
-      <div class="caption-overlay"><p>Your caption here</p></div>
-    </div>
-
-    <!-- PHOTO 10 -->
-    <div class="photo-item" onclick="openLightbox(9)">
-      <img src="images/gallery/photo10.jpg" alt="Photo 10" loading="lazy"/>
-      <span class="photo-num">10</span>
-      <div class="caption-overlay"><p>Your caption here</p></div>
-    </div>
-
-    <!-- PHOTO 11 -->
-    <div class="photo-item" onclick="openLightbox(10)">
-      <img src="images/gallery/photo11.jpg" alt="Photo 11" loading="lazy"/>
-      <span class="photo-num">11</span>
-      <div class="caption-overlay"><p>Your caption here</p></div>
-    </div>
-
-    <!-- PHOTO 12 -->
-    <div class="photo-item" onclick="openLightbox(11)">
-      <img src="images/gallery/photo12.jpg" alt="Photo 12" loading="lazy"/>
-      <span class="photo-num">12</span>
-      <div class="caption-overlay"><p>Your caption here</p></div>
-    </div>
-
-    <!-- PHOTO 13 -->
-    <div class="photo-item" onclick="openLightbox(12)">
-      <img src="images/gallery/photo13.jpg" alt="Photo 13" loading="lazy"/>
-      <span class="photo-num">13</span>
-      <div class="caption-overlay"><p>Your caption here</p></div>
-    </div>
-
-    <!-- PHOTO 14 -->
-    <div class="photo-item" onclick="openLightbox(13)">
-      <img src="images/gallery/photo14.jpg" alt="Photo 14" loading="lazy"/>
-      <span class="photo-num">14</span>
-      <div class="caption-overlay"><p>Your caption here</p></div>
-    </div>
-
-    <!-- PHOTO 15 -->
-    <div class="photo-item" onclick="openLightbox(14)">
-      <img src="images/gallery/photo15.jpg" alt="Photo 15" loading="lazy"/>
-      <span class="photo-num">15</span>
-      <div class="caption-overlay"><p>Your caption here</p></div>
-    </div>
-
-    <!-- PHOTO 16 -->
-    <div class="photo-item" onclick="openLightbox(15)">
-      <img src="images/gallery/photo16.jpg" alt="Photo 16" loading="lazy"/>
-      <span class="photo-num">16</span>
-      <div class="caption-overlay"><p>Your caption here</p></div>
-    </div>
-
-    <!-- PHOTO 17 -->
-    <div class="photo-item" onclick="openLightbox(16)">
-      <img src="images/gallery/photo17.jpg" alt="Photo 17" loading="lazy"/>
-      <span class="photo-num">17</span>
-      <div class="caption-overlay"><p>Your caption here</p></div>
-    </div>
-
-    <!-- PHOTO 18 -->
-    <div class="photo-item" onclick="openLightbox(17)">
-      <img src="images/gallery/photo18.jpg" alt="Photo 18" loading="lazy"/>
-      <span class="photo-num">18</span>
-      <div class="caption-overlay"><p>Your caption here</p></div>
-    </div>
-
-    <!-- PHOTO 19 -->
-    <div class="photo-item" onclick="openLightbox(18)">
-      <img src="images/gallery/photo19.jpg" alt="Photo 19" loading="lazy"/>
-      <span class="photo-num">19</span>
-      <div class="caption-overlay"><p>Your caption here</p></div>
-    </div>
-
-    <!-- PHOTO 20 -->
-    <div class="photo-item" onclick="openLightbox(19)">
-      <img src="images/gallery/photo20.jpg" alt="Photo 20" loading="lazy"/>
-      <span class="photo-num">20</span>
-      <div class="caption-overlay"><p>-</p></div>
-    </div>
-
-  </div>
-</section>
-
-<!-- LIGHTBOX -->
-<div class="lightbox" id="lightbox">
-  <div class="lb-inner">
-    <button class="lb-close" onclick="closeLightbox()">&#x2715;</button>
-    <button class="lb-nav lb-prev" onclick="navigate(-1)">&#8592;</button>
-    <button class="lb-nav lb-next" onclick="navigate(1)">&#8594;</button>
-    <img id="lbImg" src="" alt=""/>
-    <div class="lb-footer">
-      <div class="lb-caption" id="lbCaption"></div>
-      <div class="lb-counter" id="lbCounter"></div>
-    </div>
-  </div>
-  <div class="kb-hint">← → keys to navigate &nbsp;·&nbsp; ESC to close</div>
-</div>
+ <main>
+   <section class="gallery-section">
+     <div class="flex-grid" id="flexGrid">
+       <!-- PHOTO 01 -->
+       <div class="photo-item" onclick="openLightbox(0)">
+         <img data-src="images/gallery/photo01.jpg" src="images/gallery/photo01.jpg" alt="Photo 01" loading="lazy"/>
+         <span class="photo-num">01</span>
+         <div class="caption-overlay"><p>Your caption here</p></div>
+       </div>
+   
+       <!-- PHOTO 02 -->
+       <div class="photo-item" onclick="openLightbox(1)">
+         <img data-src="images/gallery/photo02.png" src="images/gallery/photo02.png" alt="Photo 02" loading="lazy"/>
+         <span class="photo-num">02</span>
+         <div class="caption-overlay"><p>Your caption here</p></div>
+       </div>
+   
+       <!-- PHOTO 03 -->
+       <div class="photo-item" onclick="openLightbox(2)">
+         <img data-src="images/gallery/photo03.jpg" src="images/gallery/photo03.jpg" alt="Photo 03" loading="lazy"/>
+         <span class="photo-num">03</span>
+         <div class="caption-overlay"><p>Your caption here</p></div>
+       </div>
+   
+       <!-- PHOTO 04 -->
+       <div class="photo-item" onclick="openLightbox(3)">
+         <img data-src="images/gallery/photo04.jpg" src="images/gallery/photo04.jpg" alt="Photo 04" loading="lazy"/>
+         <span class="photo-num">04</span>
+         <div class="caption-overlay"><p>Your caption here</p></div>
+       </div>
+   
+       <!-- PHOTO 05 -->
+       <div class="photo-item" onclick="openLightbox(4)">
+         <img data-src="images/gallery/photo05.jpg" src="images/gallery/photo05.jpg" alt="Photo 05" loading="lazy"/>
+         <span class="photo-num">05</span>
+         <div class="caption-overlay"><p>Your caption here</p></div>
+       </div>
+   
+       <!-- PHOTO 06 -->
+       <div class="photo-item" onclick="openLightbox(5)">
+         <img data-src="images/gallery/photo06.jpg" src="images/gallery/photo06.jpg" alt="Photo 06" loading="lazy"/>
+         <span class="photo-num">06</span>
+         <div class="caption-overlay"><p>Your caption here</p></div>
+       </div>
+   
+       <!-- PHOTO 07 -->
+       <div class="photo-item" onclick="openLightbox(6)">
+         <img data-src="images/gallery/photo07.jpg" src="images/gallery/photo07.jpg" alt="Photo 07" loading="lazy"/>
+         <span class="photo-num">07</span>
+         <div class="caption-overlay"><p>Your caption here</p></div>
+       </div>
+   
+       <!-- PHOTO 08 -->
+       <div class="photo-item" onclick="openLightbox(7)">
+         <img data-src="images/gallery/photo08.jpg" src="images/gallery/photo08.jpg" alt="Photo 08" loading="lazy"/>
+         <span class="photo-num">08</span>
+         <div class="caption-overlay"><p>Your caption here</p></div>
+       </div>
+   
+       <!-- PHOTO 09 -->
+       <div class="photo-item" onclick="openLightbox(8)">
+         <img data-src="images/gallery/photo09.jpg" src="images/gallery/photo09.jpg" alt="Photo 09" loading="lazy"/>
+         <span class="photo-num">09</span>
+         <div class="caption-overlay"><p>Your caption here</p></div>
+       </div>
+   
+       <!-- PHOTO 10 -->
+       <div class="photo-item" onclick="openLightbox(9)">
+         <img data-src="images/gallery/photo10.jpg" src="images/gallery/photo10.jpg" alt="Photo 10" loading="lazy"/>
+         <span class="photo-num">10</span>
+         <div class="caption-overlay"><p>Your caption here</p></div>
+       </div>
+   
+       <!-- PHOTO 11 -->
+       <div class="photo-item" onclick="openLightbox(10)">
+         <img data-src="images/gallery/photo11.jpg" src="images/gallery/photo11.jpg" alt="Photo 11" loading="lazy"/>
+         <span class="photo-num">11</span>
+         <div class="caption-overlay"><p>Your caption here</p></div>
+       </div>
+   
+       <!-- PHOTO 12 -->
+       <div class="photo-item" onclick="openLightbox(11)">
+         <img data-src="images/gallery/photo12.jpg" src="images/gallery/photo12.jpg" alt="Photo 12" loading="lazy"/>
+         <span class="photo-num">12</span>
+         <div class="caption-overlay"><p>Your caption here</p></div>
+       </div>
+   
+       <!-- PHOTO 13 -->
+       <div class="photo-item" onclick="openLightbox(12)">
+         <img data-src="images/gallery/photo13.jpg" src="images/gallery/photo13.jpg" alt="Photo 13" loading="lazy"/>
+         <span class="photo-num">13</span>
+         <div class="caption-overlay"><p>Your caption here</p></div>
+       </div>
+   
+       <!-- PHOTO 14 -->
+       <div class="photo-item" onclick="openLightbox(13)">
+         <img data-src="images/gallery/photo14.jpg" src="images/gallery/photo14.jpg" alt="Photo 14" loading="lazy"/>
+         <span class="photo-num">14</span>
+         <div class="caption-overlay"><p>Your caption here</p></div>
+       </div>
+   
+       <!-- PHOTO 15 -->
+       <div class="photo-item" onclick="openLightbox(14)">
+         <img data-src="images/gallery/photo15.jpg" src="images/gallery/photo15.jpg" alt="Photo 15" loading="lazy"/>
+         <span class="photo-num">15</span>
+         <div class="caption-overlay"><p>Your caption here</p></div>
+       </div>
+   
+       <!-- PHOTO 16 -->
+       <div class="photo-item" onclick="openLightbox(15)">
+         <img data-src="images/gallery/photo16.jpg" src="images/gallery/photo16.jpg" alt="Photo 16" loading="lazy"/>
+         <span class="photo-num">16</span>
+         <div class="caption-overlay"><p>Your caption here</p></div>
+       </div>
+   
+       <!-- PHOTO 17 -->
+       <div class="photo-item" onclick="openLightbox(16)">
+         <img data-src="images/gallery/photo17.jpg" src="images/gallery/photo17.jpg" alt="Photo 17" loading="lazy"/>
+         <span class="photo-num">17</span>
+         <div class="caption-overlay"><p>Your caption here</p></div>
+       </div>
+   
+       <!-- PHOTO 18 -->
+       <div class="photo-item" onclick="openLightbox(17)">
+         <img data-src="images/gallery/photo18.jpg" src="images/gallery/photo18.jpg" alt="Photo 18" loading="lazy"/>
+         <span class="photo-num">18</span>
+         <div class="caption-overlay"><p>Your caption here</p></div>
+       </div>
+   
+       <!-- PHOTO 19 -->
+       <div class="photo-item" onclick="openLightbox(18)">
+         <img data-src="images/gallery/photo19.jpg" src="images/gallery/photo19.jpg" alt="Photo 19" loading="lazy"/>
+         <span class="photo-num">19</span>
+         <div class="caption-overlay"><p>Your caption here</p></div>
+       </div>
+   
+       <!-- PHOTO 20 -->
+       <div class="photo-item" onclick="openLightbox(19)">
+         <img data-src="images/gallery/photo20.jpg" src="images/gallery/photo20.jpg" alt="Photo 20" loading="lazy"/>
+         <span class="photo-num">20</span>
+         <div class="caption-overlay"><p>-</p></div>
+       </div>
+   
+     </div>
+   </section>
+   
+   <!-- LIGHTBOX -->
+   <div class="lightbox" id="lightbox">
+     <div class="lb-inner">
+       <button class="lb-close" onclick="closeLightbox()">&#x2715;</button>
+       <button class="lb-nav lb-prev" onclick="navigate(-1)">&#8592;</button>
+       <button class="lb-nav lb-next" onclick="navigate(1)">&#8594;</button>
+       <img id="lbImg" src="" alt=""/>
+       <div class="lb-footer">
+         <div class="lb-caption" id="lbCaption"></div>
+         <div class="lb-counter" id="lbCounter"></div>
+       </div>
+     </div>
+     <div class="kb-hint">← → keys to navigate &nbsp;·&nbsp; ESC to close</div>
+   </div>
+ </main>
 
 <script>
   // Build photo data from the DOM automatically
@@ -558,5 +444,9 @@
   });
 </script>
 
+  <script src="./js/jquery.min.js"></script>
+  <script src="./js/bootstrap.min.js"></script>
+  <script src="./js/animations.js"></script>
+  <script src="./js/index.js"></script>
 </body>
 </html>

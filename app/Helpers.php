@@ -37,8 +37,9 @@ function view($file_path, $data = [])
     }
     throw new Exception('Page Not Found!' . $file);
 }
-function pageAdd($file_path)
+function pageAdd($file_path, $data = [])
 {
+    extract($data, EXTR_SKIP);
     include_once APP_ROOT . '/pages/' . $file_path . '.php';
 }
 function clientmac()

@@ -35,15 +35,13 @@
 
     <body>
         <?php pageAdd('components/header'); ?>
+        <?php pageAdd('components/hero', [
+        'headerEyebrow' => 'We Are Here for You',
+        'headerTitle' => 'Contact Us',
+        'headerDescription' => 'Reach out today. Your health matters to us.',
+        ]); ?>
         <section class="my-5 bg-green-gradient3">
             <div class="row pt-5 g-0 d-flex align-items-center justify-content-center">
-                <div class="col-12 text-center">
-                    <h1 class="fw-bolder text-secondary">
-                        Contact Us
-                    </h1>
-                    <span class="divider-3x"> </span>
-                    <h4 class="py-3 text-capitalize">We're Here To Help</h4>
-                </div>
                 <div class="col-md-10 col-12 p-2">
                     <div class="row g-3 d-flex justify-content-center align-items-stretch">
                         <div class="col-md-6 col-12 d-flex flex-column">
@@ -66,7 +64,7 @@
                                 </div>
                                 <div class="pt-2 d-flex align-items-center justify-content-end">
                                     <a href=""
-                                        class="btn btn-info btn-outline-success px-4 py-2 text-white rounded-5 fs-5 border-0 d-flex align-items-center gap-2">
+                                        class="btn brand-action-button px-4 py-2 rounded-pill fs-5 d-flex align-items-center gap-2">
                                         Send <i class="arrow-right-icon bg-white"></i></a>
                                 </div>
 

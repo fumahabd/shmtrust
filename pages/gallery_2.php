@@ -19,9 +19,9 @@ if (file_exists($indexFile)) {
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --teal-deep:  #0D5C63;
-      --teal-mid:   #1A8A7B;
-      --teal-light: #C8EDE8;
+      --teal-deep:  #103F7A;
+      --teal-mid:   #1756A2;
+      --teal-light: #EAF2FC;
       --cream:      #F7F4EF;
       --charcoal:   #1C1C1C;
       --muted:      #6B7A7D;
@@ -117,7 +117,7 @@ if (file_exists($indexFile)) {
       box-shadow: 0 2px 8px rgba(0,0,0,0.07);
       transition: transform 0.22s ease, box-shadow 0.22s ease;
     }
-    .photo-item:hover { transform: translateY(-3px); box-shadow: 0 12px 32px rgba(13,92,99,0.18); }
+    .photo-item:hover { transform: translateY(-3px); box-shadow: 0 12px 32px rgba(23,86,162,0.18); }
     .photo-item img { width: 100%; display: block; object-fit: cover; transition: transform 0.4s ease; }
     .photo-item:hover img { transform: scale(1.03); }
 

@@ -4,14 +4,14 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="keywords" content="SHMTrust">
-        <meta name="description" content="">
+        <meta name="description" content="Browse SHMT doctors by specialty, qualifications, and clinical expertise.">
         <meta property="og:locale" content="en_US">
         <meta property="og:type" content="website" />
         <meta property="og:site_name" content="SHMTrust" />
-        <meta property="og:title" content="SHMTrust" />
-        <meta property="og:description" content="" />
+        <meta property="og:title" content="Our Doctors | Sahera Hasan Memorial Hospital" />
+        <meta property="og:description" content="Browse SHMT doctors by specialty, qualifications, and clinical expertise." />
         <meta property="og:image" content="https://www.shmtrust.org/images/og.jpg" />
-        <meta property="og:url" content="https://www.shmtrust.org" />
+        <meta property="og:url" content="https://www.shmtrust.org/doctors" />
         <meta property="og:image:width" content="1280">
         <meta property="og:image:height" content="720">
         <meta name="twitter:card" content="summary_large_image">
@@ -22,250 +22,162 @@
         <meta name="author" content="SHMTrust">
         
   <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    .doctor-directory-page main,
+    .doctor-directory-page main *,
+    .doctor-directory-page main *::before,
+    .doctor-directory-page main *::after { box-sizing: border-box; }
 
-    body {
-      font-family: 'Inter', sans-serif;
-      background: #F7F9FC;
-      color: #1a2332;
+    :root {
+      --doctors-blue: #1756A2;
+      --doctors-blue-deep: #103F7A;
+      --doctors-red: #ED3345;
+      --doctors-ink: #1D2B40;
+      --doctors-muted: #63758B;
+      --doctors-line: #E0E8F2;
+      --doctors-surface: #F5F8FC;
     }
-
-    /* ── Hero Header ── */
-        .header2 {
-          background: linear-gradient(135deg, #0b3d6b 0%, #1565a8 100%);
-          color: #fff;
-          padding: 90px 40px 50px;
-          text-align: center;
-        }
-        .header2 .eyebrow {
-          font-size: 14px;
-          font-weight: 700;
-          letter-spacing: 3px;
-          text-transform: uppercase;
-          color: #7ec8f5;
-          margin-bottom: 12px;
-        }
-        .header2 h1 {
-          font-family: 'Playfair Display', serif;
-          font-size: clamp(2rem, 4vw, 3rem);
-          line-height: 1.2;
-          margin-bottom: 14px;
-        }
-        .header2 p {
-          font-size: 1rem;
-          font-weight: 300;
-          color: #b8d9f0;
-          max-width: 520px;
-          margin: 0 auto;
-          line-height: 1.7;
-        }
-
-        /* ── Header2 two-column layout ── */
-        .header2-inner {
-          display: flex;
-          flex-direction: row;
-          align-items: center;
-        }
-        .header2-left {
-          width: 10%;
-          display: flex;
-          align-items: left;
-          justify-content: center;
-          flex-shrink: 0;
-        }
-        .header2-right {
-          width: 90%;
-          text-align: center;
-        }
-    
-        /* ── Home Button ── */
-        .home-btn {
-          display: inline-flex;
-          align-items: center;
-          gap: 5px;
-          background: rgba(255,255,255,0.10);
-          border: 1.5px solid rgba(255,255,255,0.28);
-          color: #fff;
-          font-size: 11px;
-          font-weight: 500;
-          padding: 4px 8px 5px 5px;
-          border-radius: 100px;
-          text-decoration: none;
-          transition: background 0.18s, border-color 0.18s;
-        }
-        .home-btn:hover {
-          background: rgba(255,255,255,0.22);
-          border-color: rgba(255,255,255,0.55);
-          color: #fff;
-        }
-        .home-btn svg {
-          stroke: #fff;
-          flex-shrink: 0;
-        }
-
-
-
-    /* ── Doctor List ── */
-    main {
-      max-width: 900px;
+    body.doctor-directory-page {
+      font-family: 'DM Sans', 'Inter', Arial, sans-serif;
+      background: var(--doctors-surface);
+      color: var(--doctors-ink);
+    }
+    .doctor-directory-page main {
+      width: min(100% - 40px, 1240px);
       margin: 0 auto;
-      padding: 52px 24px 80px;
-      display: flex;
-      flex-direction: column;
-      gap: 0;
+      padding: 42px 0 88px;
     }
-  .read-more-btn{
-      display:none;
-  }
-    /* ── Doctor Card ── */
-    .doctor-card {
-      display: flex;
-      align-items: flex-start;
-      gap: 28px;
-      padding: 36px 0;
-      border-bottom: 1px solid #dce6f0;
-      position: relative;
-    }
-    .doctor-card:last-child { border-bottom: none; }
-
-    /* Accent line on hover */
-    .doctor-card::before {
-      content: '';
-      position: absolute;
-      left: -24px;
-      top: 36px;
-      bottom: 36px;
-      width: 3px;
-      background: #1565a8;
-      border-radius: 2px;
-      opacity: 0;
-      transition: opacity 0.25s;
-    }
-    .doctor-card:hover::before { opacity: 1; }
-
-    /* ── Photo ── */
-    .doctor-photo {
-      flex-shrink: 0;
-      width: 110px;
-      height: 110px;
-      border-radius: 12px;
-      object-fit: cover;
-      background: #dce6f0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      overflow: hidden;
-      border: 3px solid #fff;
-      box-shadow: 0 4px 16px rgba(21,101,168,0.13);
-    }
-    .doctor-photo img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-    }
-    /* Placeholder avatar when no image */
-    .doctor-photo svg {
-      width: 54px;
-      height: 54px;
-      opacity: 0.45;
-    }
-
-    /* ── Bio ── */
-    .doctor-info { flex: 1; }
-
-    .doctor-meta {
+    .directory-toolbar { display: grid; justify-items: center; gap: 20px; }
+    .search-field {
       display: flex;
       align-items: center;
       gap: 12px;
-      flex-wrap: wrap;
-      margin-bottom: 6px;
+      width: min(100%, 620px);
+      min-height: 54px;
+      padding: 0 18px;
+      border: 1px solid #D7E1EE;
+      border-radius: 14px;
+      background: #fff;
+      box-shadow: 0 8px 24px rgba(16, 63, 122, .06);
+      transition: border-color .2s ease, box-shadow .2s ease;
     }
-    .doctor-name {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.2rem;
-      color: #0b3d6b;
+    .search-field:focus-within {
+      border-color: var(--doctors-blue);
+      box-shadow: 0 0 0 4px rgba(23, 86, 162, .12);
     }
-    .doctor-badge {
-      font-size: 10px;
-      font-weight: 500;
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-      background: #e6f1fb;
-      color: #1565a8;
-      padding: 3px 9px;
-      border-radius: 20px;
+    .search-field svg {
+      width: 20px;
+      height: 20px;
+      flex: 0 0 auto;
+      stroke: var(--doctors-blue);
+      stroke-width: 1.8;
     }
-
-    .doctor-specialty {
-      font-size: 0.82rem;
-      font-weight: 500;
-      color: #1565a8;
-      margin-bottom: 10px;
-      letter-spacing: 0.3px;
+    .search-field input {
+      width: 100%;
+      border: 0;
+      outline: 0;
+      background: transparent;
+      color: var(--doctors-ink);
+      font: inherit;
     }
-
-    .doctor-bio {
-      font-size: 0.93rem;
-      font-weight: 300;
-      line-height: 1.75;
-      color: #3d4f63;
-      max-width: 600px;
-    }
-
-    .doctor-tags {
-      margin-top: 12px;
+    .search-field input::placeholder { color: #8290A2; }
+    .specialty-filters {
       display: flex;
+      justify-content: center;
       flex-wrap: wrap;
-      gap: 7px;
+      gap: 9px;
     }
-    .tag {
-      font-size: 11px;
-      padding: 4px 10px;
-      border-radius: 20px;
-      background: #f0f5fa;
-      color: #455a6e;
-      border: 1px solid #dce6f0;
+    .filter-tab {
+      min-height: 40px;
+      padding: 8px 16px;
+      border: 1px solid #D7E1EE;
+      border-radius: 999px;
+      background: #fff;
+      color: #43566D;
+      font: 500 13px/1.2 'DM Sans', Arial, sans-serif;
+      cursor: pointer;
+      transition: color .18s ease, background .18s ease, border-color .18s ease, transform .18s ease;
     }
-
-    /* ── Responsive ── */
-    @media (max-width: 560px) {
-      .doctor-card {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-      }
-      .doctor-meta { justify-content: center; }
-      .doctor-bio { max-width: 100%; }
-      .doctor-tags { justify-content: center; }
-      .doctor-bio{
-          display:-webkit-box;
-          -webkit-line-clamp:4;
-          -webkit-box-orient:vertical;
-          overflow:hidden;
-      }
-
-      .doctor-bio.expanded{
-          -webkit-line-clamp:unset;
-          overflow:visible;
-      }
-
-      .read-more-btn{
-          display:inline-block;
-          margin-top:10px;
-          background:none;
-          border:none;
-          color:#007bff;
-          font-weight:600;
-          cursor:pointer;
-          padding:0;
-      }
+    .filter-tab:hover { border-color: var(--doctors-blue); color: var(--doctors-blue); transform: translateY(-1px); }
+    .filter-tab.is-active { border-color: var(--doctors-blue); background: var(--doctors-blue); color: #fff; }
+    .filter-tab:focus-visible, .doctor-profile summary:focus-visible { outline: 3px solid rgba(237, 51, 69, .45); outline-offset: 3px; }
+    .directory-result-count { min-height: 20px; margin: -7px 0 0; color: var(--doctors-muted); font-size: 13px; }
+    .specialty-group { margin-top: 52px; }
+    .specialty-heading {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 18px;
+      margin-bottom: 20px;
+      padding-bottom: 14px;
+      border-bottom: 1px solid var(--doctors-line);
+    }
+    .section-kicker { margin: 0 0 5px; color: var(--doctors-blue); font-size: 11px; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; }
+    .specialty-heading h2 { margin: 0; color: var(--doctors-ink); font-family: 'Cormorant Garamond', Georgia, serif; font-size: clamp(1.7rem, 3vw, 2.25rem); font-weight: 600; line-height: 1.1; }
+    .specialty-count { flex: 0 0 auto; padding: 7px 11px; border-radius: 999px; background: #EAF2FC; color: var(--doctors-blue-deep); font-size: 12px; font-weight: 600; }
+    .doctor-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
+    .doctor-card {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      min-width: 0;
+      overflow: hidden;
+      border: 1px solid var(--doctors-line);
+      border-radius: 18px;
+      background: #fff;
+      box-shadow: 0 8px 24px rgba(16, 63, 122, .055);
+      transition: transform .22s ease, box-shadow .22s ease, border-color .22s ease;
+    }
+    .doctor-card::after { position: absolute; inset: 0 auto auto 0; width: 100%; height: 3px; background: var(--doctors-red); content: ''; transform: scaleX(0); transform-origin: left; transition: transform .22s ease; }
+    .doctor-card:hover { transform: translateY(-4px); border-color: #C7D8EC; box-shadow: 0 16px 34px rgba(16, 63, 122, .12); }
+    .doctor-card:hover::after { transform: scaleX(1); }
+    .doctor-card[hidden], .specialty-group[hidden] { display: none !important; }
+    .doctor-photo-wrap { position: relative; height: 218px; overflow: hidden; background: #EAF2FC; }
+    .doctor-photo { display: block; width: 100%; height: 100%; object-fit: cover; object-position: center 28%; transition: transform .35s ease; }
+    .doctor-card:hover .doctor-photo { transform: scale(1.035); }
+    .doctor-photo-accent { position: absolute; right: 0; bottom: 0; left: 0; height: 38px; background: linear-gradient(transparent, rgba(16, 63, 122, .12)); pointer-events: none; }
+    .doctor-info { display: flex; flex: 1; flex-direction: column; padding: 19px 20px 18px; }
+    .doctor-name { margin: 0; color: var(--doctors-ink); font-size: 18px; font-weight: 700; line-height: 1.3; }
+    .doctor-degree { margin: 7px 0 0; color: var(--doctors-blue); font-size: 12px; font-weight: 600; line-height: 1.55; }
+    .doctor-specialty { margin: 10px 0 0; color: #53677E; font-size: 13px; line-height: 1.55; }
+    .doctor-tags { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 14px; }
+    .doctor-tag { padding: 5px 9px; border: 1px solid #E2EAF4; border-radius: 999px; background: #F6F9FD; color: #52657B; font-size: 10px; line-height: 1.2; }
+    .doctor-profile { margin-top: auto; padding-top: 15px; }
+    .doctor-profile summary { display: inline-flex; align-items: center; gap: 7px; color: var(--doctors-blue); font-size: 13px; font-weight: 600; cursor: pointer; list-style: none; }
+    .doctor-profile summary::-webkit-details-marker { display: none; }
+    .doctor-profile summary::after { color: var(--doctors-red); content: '+'; font-size: 18px; line-height: 1; }
+    .doctor-profile[open] summary::after { content: '−'; }
+    .doctor-profile p { margin: 12px 0 0; color: var(--doctors-muted); font-size: 13px; line-height: 1.7; }
+    .no-doctors { margin: 42px auto; color: var(--doctors-muted); text-align: center; }
+    @media (max-width: 960px) { .doctor-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+    @media (max-width: 600px) {
+      .doctor-directory-page main { width: min(100% - 28px, 480px); padding: 26px 0 60px; }
+      .directory-toolbar { gap: 15px; }
+      .specialty-filters { width: 100%; justify-content: flex-start; flex-wrap: nowrap; overflow-x: auto; padding: 2px 1px 6px; scrollbar-width: thin; }
+      .filter-tab { flex: 0 0 auto; padding-inline: 13px; }
+      .specialty-group { margin-top: 36px; }
+      .specialty-heading { align-items: center; margin-bottom: 15px; }
+      .specialty-heading h2 { max-width: 250px; font-size: 1.65rem; }
+      .doctor-grid { grid-template-columns: 1fr; gap: 14px; }
+      .doctor-card { display: grid; grid-template-columns: 104px minmax(0, 1fr); border-radius: 15px; }
+      .doctor-photo-wrap { height: auto; min-height: 168px; }
+      .doctor-photo { position: absolute; inset: 0; }
+      .doctor-info { padding: 16px 14px; }
+      .doctor-name { font-size: 16px; }
+      .doctor-specialty { font-size: 12px; }
+      .doctor-tag { font-size: 9px; }
+    }
+    @media (max-width: 380px) {
+      .doctor-card { grid-template-columns: 1fr; }
+      .doctor-photo-wrap { height: 190px; min-height: 0; }
+      .doctor-photo { position: static; }
+      .doctor-info { padding: 16px; }
+      .specialty-count { padding-inline: 8px; font-size: 11px; }
     }
   </style>
-        <link rel="canonical" href="https://www.shmtrust.org" />
+        <link rel="canonical" href="https://www.shmtrust.org/doctors" />
         <link rel="apple-touch-icon" href="https://www.shmtrust.org/images/favicon.ico">
         <link rel="icon" type="image/gif" href="./images/favicon.ico">
-        <title>Sahera Hasan Memorial Hospital - About us</title>
+        <title>Our Doctors | Sahera Hasan Memorial Hospital</title>
         <link rel="shortcut icon" href="./images/favicon.ico" type="image/x-icon">
         <link rel="stylesheet" href="./css/bootstrap.css" />
         <link rel="stylesheet" href="./css/style.css" />
@@ -274,7 +186,7 @@
         <script src="./js/utilities.js"></script>
 </head>
 
-<body>
+<body class="doctor-directory-page">
     <div id="preloader">
         <div>
             <img data-src="./images/logo.jpg" src="./images/logo.jpg" alt="logo" style="width:30px">
@@ -283,16 +195,31 @@
         </div>
     </div>
     <?php pageAdd('components/header'); ?>
-
-  <div class="header2">
-      <!-- RIGHT: Title & subtitle (80%) -->
-      <div class="text-center">
-        <p class="eyebrow">Sahera Hasan Memorial Hospital</p>
-        <h3>Meet Our Doctors</h3>
-        <p>Our team of dedicated specialists brings decades of combined experience in patient-centred care.</p>
-      </div>
-  </div>
+    <?php pageAdd('components/hero', [
+        'headerEyebrow' => 'Expert Hands, Caring Hearts',
+        'headerTitle' => 'Meet Our Doctors',
+        'headerDescription' => 'Dedicated professionals, committed to your health.',
+    ]); ?>
 <main>
+    <div class="directory-toolbar" aria-label="Find a doctor">
+        <label class="search-field">
+            <span class="visually-hidden">Search doctors by name, qualification, or specialty</span>
+            <svg aria-hidden="true" viewBox="0 0 24 24" fill="none">
+                <circle cx="10.8" cy="10.8" r="6.8"></circle>
+                <path d="m16 16 4.5 4.5"></path>
+            </svg>
+            <input id="doctorSearch" type="search" placeholder="Search doctors or specialties" autocomplete="off">
+        </label>
+        <nav class="specialty-filters" aria-label="Filter doctors by specialty">
+            <button class="filter-tab is-active" type="button" data-filter="all" aria-pressed="true">All doctors</button>
+            <button class="filter-tab" type="button" data-filter="women" aria-pressed="false">Gynecologist</button>
+            <button class="filter-tab" type="button" data-filter="diagnostics" aria-pressed="false">Diagnostics</button>
+            <button class="filter-tab" type="button" data-filter="surgery" aria-pressed="false">Surgery &amp; urology</button>
+            <button class="filter-tab" type="button" data-filter="anesthesia" aria-pressed="false">Anesthesiology</button>
+        </nav>
+        <p class="directory-result-count" id="doctorResultCount" aria-live="polite"></p>
+    </div>
+    <div class="directory-groups" id="doctorDirectory">
 <?php
 $doctors = [
     [
@@ -502,53 +429,128 @@ Holy Family Red Crescent Medical College & Hospital, Dhaka, Bangladesh",
     ],
 ];
 
+$excludedDoctors = ['Prof. Dr. Rowshan Ara Begum'];
+$doctors = array_values(array_filter($doctors, static function ($doctor) use ($excludedDoctors) {
+    return !in_array($doctor['name'], $excludedDoctors, true);
+}));
+
+$categoryDefinitions = [
+    'women' => ['title' => 'Gynecologist', 'doctors' => []],
+    'diagnostics' => ['title' => 'Diagnostic Medicine & Ultrasound', 'doctors' => []],
+    'surgery' => ['title' => 'General Surgery & Urology', 'doctors' => []],
+    'anesthesia' => ['title' => 'Anesthesiology & Critical Care', 'doctors' => []],
+];
+
+foreach ($doctors as $doctor) {
+    if (in_array('Diagnostic Medicine', $doctor['tags'], true)) {
+        $category = 'diagnostics';
+    } elseif (in_array('Anesthesiology', $doctor['tags'], true)) {
+        $category = 'anesthesia';
+    } elseif (in_array('General Surgery', $doctor['tags'], true) || in_array('Urology', $doctor['tags'], true) || in_array('Urology Specialist', $doctor['tags'], true)) {
+        $category = 'surgery';
+    } else {
+        $category = 'women';
+    }
+    $categoryDefinitions[$category]['doctors'][] = $doctor;
+}
+
+$categoryLabels = [
+    'women' => 'Gynecologist',
+    'diagnostics' => 'Diagnostics',
+    'surgery' => 'Surgery & urology',
+    'anesthesia' => 'Anesthesiology',
+];
 ?>
-<?php foreach ($doctors as $index => $doctor): ?>
-
-<div class="doctor-card">
-
-    <div class="doctor-photo">
-        <img
-            data-src="<?= $doctor['image'] ?>"
-            src="<?= $doctor['image'] ?>"
-            alt="<?= htmlspecialchars($doctor['name']) ?>"
-        >
-    </div>
-
-    <div class="doctor-info">
-
-        <div class="doctor-meta">
-            <span class="doctor-name"><?= htmlspecialchars($doctor['name']) ?></span>
-            <span class="doctor-badge"><?= htmlspecialchars($doctor['degree']) ?></span>
+<?php foreach ($categoryDefinitions as $categoryId => $category): ?>
+    <?php if (!empty($category['doctors'])): ?>
+    <section class="specialty-group" data-specialty-group="<?= htmlspecialchars($categoryId, ENT_QUOTES, 'UTF-8') ?>" aria-labelledby="heading-<?= htmlspecialchars($categoryId, ENT_QUOTES, 'UTF-8') ?>">
+        <div class="specialty-heading">
+            <div>
+                <p class="section-kicker">Specialty</p>
+                <h2 id="heading-<?= htmlspecialchars($categoryId, ENT_QUOTES, 'UTF-8') ?>"><?= htmlspecialchars($category['title'], ENT_QUOTES, 'UTF-8') ?></h2>
+            </div>
+            <span class="specialty-count"><?= count($category['doctors']) ?> <?= count($category['doctors']) === 1 ? 'doctor' : 'doctors' ?></span>
         </div>
-
-        <div class="doctor-specialty">
-            <?= nl2br(htmlspecialchars($doctor['specialty'])) ?>
-        </div>
-
-        <p class="doctor-bio" id="bio<?= $index ?>">
-            <?= htmlspecialchars($doctor['bio']) ?>
-        </p>
-
-        <button
-            class="read-more-btn"
-            data-target="bio<?= $index ?>">
-            Read More
-        </button>
-
-        <div class="doctor-tags">
-            <?php foreach ($doctor['tags'] as $tag): ?>
-                <span class="tag"><?= htmlspecialchars($tag) ?></span>
+        <div class="doctor-grid">
+            <?php foreach ($category['doctors'] as $doctor): ?>
+                <?php
+                    $searchText = implode(' ', array_merge([
+                        $doctor['name'], $doctor['degree'], $doctor['specialty'], $categoryLabels[$categoryId]
+                    ], $doctor['tags']));
+                ?>
+                <article class="doctor-card" data-category="<?= htmlspecialchars($categoryId, ENT_QUOTES, 'UTF-8') ?>" data-search="<?= htmlspecialchars(strtolower($searchText), ENT_QUOTES, 'UTF-8') ?>">
+                    <div class="doctor-photo-wrap">
+                        <img class="doctor-photo" data-src="<?= htmlspecialchars($doctor['image'], ENT_QUOTES, 'UTF-8') ?>" src="<?= htmlspecialchars($doctor['image'], ENT_QUOTES, 'UTF-8') ?>" alt="Portrait of <?= htmlspecialchars($doctor['name'], ENT_QUOTES, 'UTF-8') ?>" loading="lazy" decoding="async">
+                        <span class="doctor-photo-accent" aria-hidden="true"></span>
+                    </div>
+                    <div class="doctor-info">
+                        <h3 class="doctor-name"><?= htmlspecialchars($doctor['name'], ENT_QUOTES, 'UTF-8') ?></h3>
+                        <p class="doctor-degree"><?= htmlspecialchars($doctor['degree'], ENT_QUOTES, 'UTF-8') ?></p>
+                        <p class="doctor-specialty"><?= nl2br(htmlspecialchars($doctor['specialty'], ENT_QUOTES, 'UTF-8')) ?></p>
+                        <div class="doctor-tags" aria-label="Areas of expertise">
+                            <?php foreach ($doctor['tags'] as $tag): ?>
+                                <span class="doctor-tag"><?= htmlspecialchars($tag, ENT_QUOTES, 'UTF-8') ?></span>
+                            <?php endforeach; ?>
+                        </div>
+                        <details class="doctor-profile">
+                            <summary>View profile</summary>
+                            <p><?= htmlspecialchars($doctor['bio'], ENT_QUOTES, 'UTF-8') ?></p>
+                        </details>
+                    </div>
+                </article>
             <?php endforeach; ?>
         </div>
-
-    </div>
-
-</div>
-
+    </section>
+    <?php endif; ?>
 <?php endforeach; ?>
-
+    <p class="no-doctors" id="noDoctors" hidden>No doctors match your search. Try another name or specialty.</p>
 </main>
+<script>
+(() => {
+    const searchInput = document.getElementById('doctorSearch');
+    const filterTabs = Array.from(document.querySelectorAll('.filter-tab'));
+    const cards = Array.from(document.querySelectorAll('.doctor-card'));
+    const groups = Array.from(document.querySelectorAll('.specialty-group'));
+    const resultCount = document.getElementById('doctorResultCount');
+    const emptyState = document.getElementById('noDoctors');
+    let activeCategory = 'all';
+
+    function updateDirectory() {
+        const query = searchInput.value.trim().toLocaleLowerCase();
+        let visibleCount = 0;
+
+        cards.forEach((card) => {
+            const matchesCategory = activeCategory === 'all' || card.dataset.category === activeCategory;
+            const matchesSearch = !query || card.dataset.search.includes(query);
+            const visible = matchesCategory && matchesSearch;
+            card.hidden = !visible;
+            if (visible) visibleCount += 1;
+        });
+
+        groups.forEach((group) => {
+            group.hidden = !group.querySelector('.doctor-card:not([hidden])');
+        });
+
+        emptyState.hidden = visibleCount !== 0;
+        resultCount.textContent = `${visibleCount} ${visibleCount === 1 ? 'doctor' : 'doctors'} found`;
+    }
+
+    filterTabs.forEach((tab) => {
+        tab.addEventListener('click', () => {
+            activeCategory = tab.dataset.filter;
+            filterTabs.forEach((item) => {
+                const selected = item === tab;
+                item.classList.toggle('is-active', selected);
+                item.setAttribute('aria-pressed', String(selected));
+            });
+            updateDirectory();
+        });
+    });
+
+    searchInput.addEventListener('input', updateDirectory);
+    updateDirectory();
+})();
+</script>
 <?php pageAdd('components/footer'); ?>
   <script src="./js/jquery.min.js"></script>
   <script src="./js/bootstrap.min.js"></script>

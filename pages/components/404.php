@@ -20,6 +20,7 @@
             <p style="font-size:10dvw; color: grey; font-weight:800; margin-bottom:0">4O4</p>
             <h3 style="margin-top:0; color: gray">Sorry! Cannot find this Page.</h3>
         </div>
+        <?php pageAdd('components/quick-actions'); ?>
     </body>
 
 </html>

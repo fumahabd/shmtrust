@@ -16,3 +16,4 @@
         </div>
     </div>
 </nav>
+<?php pageAdd('components/quick-actions'); ?>

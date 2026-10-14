@@ -1,4 +1,4 @@
-<footer class="text-white" style="background-color:#1D2B40">
+<footer class="site-footer text-white">
     <div class="row g-0 d-flex align-items-center justify-content-center pt-5 pb-2">
         <div class="col-md-11 col-12">
             <div class="row g-0 d-flex justify-content-around">
